@@ -92,7 +92,7 @@ Advance Queries
 8) Find the customer who spent the most on orders
 9) Calculate the stock remaining after fulfilling all orders
 
-## 🧠 SQL Concepts Demonstrated
+##  SQL Concepts Demonstrated
 
 - SELECT, WHERE
 - GROUP BY & HAVING
