@@ -1,6 +1,6 @@
-# 📊 Online Book Store Sales & Customer Analysis (SQL Project)
+#  Online Book Store Sales & Customer Analysis (SQL Project)
 
-## 📌 Project Overview
+## Project Overview
 
 This project focuses on analyzing sales data from an online bookstore using SQL.  
 The objective is to extract meaningful business insights related to revenue performance, customer behavior, product trends, and inventory management.
@@ -9,7 +9,7 @@ The analysis was performed using relational database concepts such as JOINs, agg
 
 ---
 
-## 🎯 Business Problem
+##  Business Problem
 
 The online bookstore wanted to:
 
@@ -23,11 +23,11 @@ Raw transactional data was stored in relational tables, and SQL was used to tran
 
 ---
 
-## 🗂️ Database Structure
+##  Database Structure
 
 The database consists of three tables:
 
-### 1️⃣ Books Table
+### 1️.Books Table
 -  Book_ID SERIAL PRIMARY KEY,
 -    Title VARCHAR(100),
 -   Author VARCHAR(100),
@@ -37,7 +37,7 @@ The database consists of three tables:
 -    Stock INT
   
 
-### 2️⃣ Customers Table
+###  2️.Customers Table
 - Customer_ID SERIAL PRIMARY KEY,
 -  Name VARCHAR(100),
 -  Email VARCHAR(100),
@@ -45,7 +45,7 @@ The database consists of three tables:
 -  City VARCHAR(50),
 -  Country VARCHAR(150)
 
-### 3️⃣ Orders Table
+###  3️.Orders Table
 - Order_ID SERIAL PRIMARY KEY,
 -  Customer_ID INT REFERENCES Customers(Customer_ID),
 -  Book_ID INT REFERENCES Books(Book_ID),
@@ -59,7 +59,7 @@ Relationships:
 
 ---
 
-## 🛠️ Tools & Technologies Used
+##  Tools & Technologies Used
 
 - SQL (PostgreSQL)
 - Relational Database Concepts
@@ -67,7 +67,7 @@ Relationships:
 
 ---
 
-## 📊 Key Analysis Performed
+##  Key Analysis Performed
 
 1) Retrieve all books in the "Fiction" genre
 2) Find books published after the year 1950
@@ -106,7 +106,7 @@ Advance Queries
 
 ---
 
-## 📈 Key Business Insights
+## Key Business Insights
 
 - Identified top customers contributing a significant percentage of total revenue.
 - Determined the highest-performing book genre.
@@ -116,7 +116,7 @@ Advance Queries
 
 ---
 
-## 💡 Business Recommendations
+##  Business Recommendations
 
 - Increase inventory for high-demand books.
 - Introduce loyalty programs for repeat customers.
@@ -126,7 +126,7 @@ Advance Queries
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 online-bookstore-sql-analysis/
@@ -140,7 +140,7 @@ online-bookstore-sql-analysis/
 
 ---
 
-## 🚀 How to Run This Project
+##  How to Run This Project
 
 1. Create a new database.
 2. Run `schema.sql` to create tables.
@@ -149,14 +149,14 @@ online-bookstore-sql-analysis/
 
 ---
 
-## 🎤 project Explanation (Short Summary)
+##  project Explanation (Short Summary)
 
 In this project, I analyzed online bookstore data using SQL to evaluate revenue performance, customer behavior, and product trends.  
 I applied joins, aggregations, subqueries, and window functions to generate business insights and provide data-driven recommendations.
 
 ---
 
-## 📌 Future Improvements
+## Future Improvements
 
 - Add Power BI dashboard for visualization
 - Perform customer segmentation analysis
@@ -165,7 +165,7 @@ I applied joins, aggregations, subqueries, and window functions to generate busi
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 Mritunjay Kumar  
 Aspiring Data Analyst | SQL | Data Analytics  
