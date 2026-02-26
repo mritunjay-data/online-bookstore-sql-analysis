@@ -111,9 +111,9 @@ CSV HEADER;
 	select sum(total_amount)as total_revenue 
 	from orders;
 
--- Advance Questions : 
 
--- 1) Retrieve the total number of books sold for each genre:
+
+-- 12) Retrieve the total number of books sold for each genre:
 	select b.genre,sum(o.quantity) as total_books_sold
 	from orders o
 	join books b on o.book_id=b.book_id
@@ -121,13 +121,13 @@ CSV HEADER;
 
 
 
--- 2) Find the average price of books in the "Fantasy" genre:
+-- 13) Find the average price of books in the "Fantasy" genre:
 	select avg(price) as average_price
 	from books
 	where genre='Fantasy';
 
 
--- 3) List customers who have placed at least 2 orders:
+-- 14) List customers who have placed at least 2 orders:
 	select c.name,o.customer_id, count (o.order_id) as order_count
 	from orders o
 	join customers c on c.customer_id=o.customer_id
@@ -135,7 +135,7 @@ CSV HEADER;
 	having count(o.order_id)>=2;
 	
 
--- 4) Find the most frequently ordered book:
+-- 15) Find the most frequently ordered book:
 	select o.book_id,b.title,count(o.order_id)as order_count
 	from orders o
 	join books b on o.book_id = b.book_id
@@ -144,14 +144,14 @@ CSV HEADER;
 	limit 5;
 	
 
--- 5) Show the top 3 most expensive books of 'Fantasy' Genre :
+-- 16) Show the top 3 most expensive books of 'Fantasy' Genre :
 	select * from books 
 	where genre='Fantasy'
 	order by price desc 
 	limit 3;
 	
 
--- 6) Retrieve the total quantity of books sold by each author:
+-- 17) Retrieve the total quantity of books sold by each author:
 	select b.author,sum(o.quantity)as total_books_sold
 	from orders o
 	join books b on o.book_id=b.book_id
@@ -159,14 +159,14 @@ CSV HEADER;
 	
 
 
--- 7) List the cities where customers who spent over $30 are located:
+-- 18) List the cities where customers who spent over $30 are located:
 	select distinct c.city , o.total_amount
 	from orders o
 	join customers c on c.customer_id = o.customer_id
 	where o.total_amount>30;
 	
 
--- 8) Find the customer who spent the most on orders:
+-- 19) Find the customer who spent the most on orders:
 	select c.customer_id, c.name, sum(o.total_amount)as total_spent
 	from orders o
 	join customers c on o.customer_id=c.customer_id
@@ -174,9 +174,12 @@ CSV HEADER;
 	order by total_spent desc limit 1;
 
 
---9) Calculate the stock remaining after fulfilling all orders:
-	
-	
+--20) Calculate the stock remaining after fulfilling all orders:
+	select b.book_id, b.title, b.stock , coalesce(sum(o.quantity),0) as Order_quantity,
+			b.stock- coalesce (sum(o.quantity),0) as Remaining_Quantity
+	from books b
+	left join orders o on b.book_id = o.book_id
+	group by b.book_id order by b.book_id;	
 
 
 
